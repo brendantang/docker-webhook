@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  webhook:
+    image: almir/webhook:2.7.0
+    ports:
+      - ${PORT}:9000
+    volumes:
+      - ${HOST_HOOKS}:/etc/webhook
+      - ${HOST_SCRIPTS}:/var/scripts
+      - ${HOST_EXPOSED_VOLUME}:/mnt/host
+    command: -verbose -hooks=/etc/webhook/hooks.json -hotreload
+
