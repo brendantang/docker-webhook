@@ -4,7 +4,14 @@ See https://github.com/adnanh/webhook.
 
 ## usage
 
-See `.example.env`
+### tldr
+
+- Set up a directory on your server for the container to mount as a volume
+- `git clone https://github.com/brendantang/docker-webhook`
+- `cd docker-webhook && vim .env` (see `.example.env`)
+- `docker-compose up`
+
+### explanation 
 
 A (good) constraint of running webhook inside this Docker container is that you must keep the part of the filesystem you want it to access contained in a single directory.
 
@@ -28,3 +35,5 @@ I then set up a webhook on my git server with the origin repo (i.e. Github or Gi
 
 > Note that the path to `foo` from the container's point of view is `/etc/webhook/scripts/foo`, whereas on the host machine it is `/home/brendan/webhook/scripts/foo`.
 > Paths must be expressed in the `hooks.json` file as seen on the container's filesystem.
+
+TODO: link to repo of my `~/webhook` directory as an example
