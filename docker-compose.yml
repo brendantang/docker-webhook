@@ -8,3 +8,4 @@ services:
     volumes:
       - ${HOST_VOLUME}:/etc/webhook
     command: -verbose -hooks=/etc/webhook/hooks.json -hotreload 
+    restart: always
