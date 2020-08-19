@@ -2,6 +2,8 @@ A docker container to receive webhooks to automate deployment.
 Dockerfile adapted from https://hub.docker.com/r/almir/webhook.
 See https://github.com/adnanh/webhook.
 
+Debian image with Node runtime.
+
 ## usage
 
 ### tldr
@@ -35,5 +37,3 @@ I then set up a webhook on my git server with the origin repo (i.e. Github or Gi
 
 > Note that the path to `foo` from the container's point of view is `/etc/webhook/scripts/foo`, whereas on the host machine it is `/home/brendan/webhook/scripts/foo`.
 > Paths must be expressed in the `hooks.json` file as seen on the container's filesystem.
-
-TODO: link to repo of my `~/webhook` directory as an example
